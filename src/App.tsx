@@ -20,17 +20,17 @@ const client = new ApolloClient({
   cache
 });
 
-// writing a GraphQL query that asks for names and codes for all countries
+// writing a GraphQL query example with QUERY METHOD (or we can create  QUERY COMPONENT or use useQuery HOOK!) !!!
+//QUERY METHOD
 client.query({
 query: gql`
 {
-  countries {
+  country(code:"PL") {
     name
-    code
   }
 }
 `
-}).then(response => console.log("response:",response));
+}).then(response => console.log("response:",response.data));
 
 function App() {
   return (
